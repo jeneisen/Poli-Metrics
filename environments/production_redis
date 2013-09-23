@@ -1,0 +1,4 @@
+HOST = tbd
+PORT = 6379
+NUM = 0
+PASS =
