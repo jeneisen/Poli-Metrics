@@ -16,7 +16,6 @@ func main() {
 	api := anaconda.NewTwitterApi(twitter_credentials["ACCESS_TOKEN"], twitter_credentials["ACCESS_TOKEN_SECRET"])
 	
 	c := bass.NewRDB()
-	
 	countries := bass.GetCountries(c)
 	for _, country := range countries {
 		var sentiment_val float64

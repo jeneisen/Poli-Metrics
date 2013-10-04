@@ -26,6 +26,12 @@ func NewRDB() *redis.Client {
 	return redis.New("tcp:"+rdb_info["HOST"]+":"+rdb_info["PORT"], rdb_num, rdb_info["PASS"])
 }
 
+func PullRDB(country_name string, c *redis.Client) []string {
+	reply, _ := c.Smembers(country_name)
+	str := reply.StringArray()
+	return str
+}
+
 func CloseRDB(c *redis.Client) {
 	c.Quit()
 }
